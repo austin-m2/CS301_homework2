@@ -29,7 +29,7 @@ public class Main {
 
         }
 
-        x[n] = b[n] / a[n][n];
+        x[n-1] = b[n-1] / a[n-1][n-1];
 
         for (int i = n - 1; i > 0; i--) {
             sum = b[i];
@@ -53,7 +53,7 @@ public class Main {
                 for (j = 0; j < n; j++) {
                     a[i][j] = (float) Math.pow(i + 2, j);
                 }
-                b[i] = ((float) Math.pow(i + 1, n) - 1) / i;
+                b[i] = ((float) Math.pow(i + 2, n + 1) - 2) / (i + 1);
             }
             System.out.println("naive gauss " + n);
             naive_gauss(n,a,b,x);
